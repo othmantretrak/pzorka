@@ -1,0 +1,68 @@
+<!-- Back to detail link -->
+<div class="breadcrumb">
+    <a href="/book/{{book.id}}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Book Details</a>
+</div>
+
+<!-- Edit form container -->
+<div class="form-container">
+    <h1>Edit Book</h1>
+    
+    <!-- Book edit form - uses POST method -->
+    <form action="/book/{{book.id}}/edit" method="POST" class="book-form">
+        
+        <!-- Title input -->
+        <div class="form-group">
+            <label for="title">Book Title *</label>
+            <input type="text" id="title" name="title" value="{{book.title}}" required>
+        </div>
+
+        <!-- Author selection dropdown -->
+        <div class="form-group">
+            <label for="author_id">Author *</label>
+            <select id="author_id" name="author_id" required>
+                {{#each authors}}
+                    <option value="{{id}}" {{#if (eq id ../book.author_id)}}selected{{/if}}>
+                        {{name}}
+                    </option>
+                {{/each}}
+            </select>
+        </div>
+
+        <!-- Genre selection dropdown -->
+        <div class="form-group">
+            <label for="genre_id">Genre *</label>
+            <select id="genre_id" name="genre_id" required>
+                {{#each genres}}
+                    <option value="{{id}}" {{#if (eq id ../book.genre_id)}}selected{{/if}}>
+                        {{name}}
+                    </option>
+                {{/each}}
+            </select>
+        </div>
+
+        <!-- Publication year input -->
+        <div class="form-group">
+            <label for="publication_year">Publication Year</label>
+            <input type="number" id="publication_year" name="publication_year" 
+                   value="{{book.publication_year}}" min="1000" max="2025">
+        </div>
+
+        <!-- ISBN input -->
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" name="isbn" value="{{book.isbn}}">
+        </div>
+
+        <!-- Pages input -->
+        <div class="form-group">
+            <label for="pages">Number of Pages</label>
+            <input type="number" id="pages" name="pages" value="{{book.pages}}" min="1">
+        </div>
+
+        <!-- Form action buttons -->
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="/book/{{book.id}}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

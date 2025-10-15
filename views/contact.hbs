@@ -1,0 +1,124 @@
+<!-- Contact page content -->
+<div class="content-page">
+  <h1>Contact Us</h1>
+
+  <!-- Contact introduction -->
+  <div class="contact-intro">
+    <p>
+      Have questions about the Book Management System? Want to report a bug or
+      suggest a new feature? We'd love to hear from you!
+    </p>
+  </div>
+
+  <!-- Contact information grid -->
+  <div class="contact-grid">
+    <!-- Email contact -->
+    <div class="contact-card">
+      <div class="contact-icon"><i
+          class="fa-solid fa-envelope"
+          aria-hidden="true"
+        ></i><span class="sr-only">Email</span></div>
+      <h3>Email</h3>
+      <p>Send us an email for general inquiries</p>
+      <a href="mailto:admin@bookmanagement.com" class="contact-link">
+        admin@bookmanagement.com
+      </a>
+    </div>
+
+    <!-- Technical support -->
+    <div class="contact-card">
+      <div class="contact-icon"><i
+          class="fa-solid fa-laptop-code"
+          aria-hidden="true"
+        ></i><span class="sr-only">Technical Support</span></div>
+      <h3>Technical Support</h3>
+      <p>Need help with the system?</p>
+      <a href="mailto:support@bookmanagement.com" class="contact-link">
+        support@bookmanagement.com
+      </a>
+    </div>
+
+    <!-- GitHub repository -->
+    <div class="contact-card">
+      <div class="contact-icon"><i
+          class="fa-solid fa-wrench"
+          aria-hidden="true"
+        ></i><span class="sr-only">Development</span></div>
+      <h3>Development</h3>
+      <p>Report bugs or contribute</p>
+      <p class="contact-link">Academic Project Repository</p>
+    </div>
+  </div>
+
+  <!-- Contact form section -->
+  <div class="contact-form-section">
+    <h2>Send Us a Message</h2>
+    <form
+      class="contact-form"
+      onsubmit="event.preventDefault(); alert('This is a demo form. In production, this would send an email.');"
+    >
+
+      <!-- Name input -->
+      <div class="form-group">
+        <label for="name">Your Name *</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Enter your name"
+        />
+      </div>
+
+      <!-- Email input -->
+      <div class="form-group">
+        <label for="email">Your Email *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="your.email@example.com"
+        />
+      </div>
+
+      <!-- Subject input -->
+      <div class="form-group">
+        <label for="subject">Subject *</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          placeholder="What is your message about?"
+        />
+      </div>
+
+      <!-- Message textarea -->
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          placeholder="Enter your message here..."
+        ></textarea>
+      </div>
+
+      <!-- Submit button -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Additional information -->
+  <div class="contact-note">
+    <p>
+      <strong>Note:</strong>
+      This is an academic project. The contact form is for demonstration
+      purposes only and does not actually send emails.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,808 @@
+/* ============================================
+   BOOK MANAGEMENT SYSTEM - STYLESHEET
+   Using Flexbox and CSS Grid for layout
+   ============================================ */
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #dff2eb;
+  min-height: 100vh;
+}
+
+/* Main container - uses flexbox for vertical layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   NAVIGATION BAR - Flexbox Layout
+   ============================================ */
+
+header {
+  background: #4a628a;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation bar using flexbox */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Navigation menu - horizontal flexbox */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu a.active {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+/* User status display - flexbox */
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logged-in {
+  color: #90ee90;
+  font-weight: 500;
+}
+
+.logged-out {
+  color: #ffb6c1;
+  font-weight: 500;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+main {
+  flex: 1; /* Allows main to grow and push footer down */
+  padding: 2rem;
+}
+
+/* ============================================
+   BUTTONS - Reusable Button Styles
+   ============================================ */
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #7ab2d3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: #764ba2;
+}
+
+.btn-primary:hover {
+  background: #663a8e;
+}
+
+.btn-secondary {
+  background: #6c757d;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.btn-danger {
+  background: #dc3545;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.btn-small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-pagination {
+  padding: 0.5rem 1rem;
+}
+
+.btn-pagination.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-pagination.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================
+   HOME PAGE - Hero Section
+   ============================================ */
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #b9e5e8;
+  color: #4a628a;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Features grid - CSS Grid layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #4a628a;
+}
+
+.feature-card h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+/* Info section - Grid layout */
+.info-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.info-section h2 {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid #667eea;
+}
+
+/* ============================================
+   BOOKS LIST PAGE - Grid Layout
+   ============================================ */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h1 {
+  color: #667eea;
+}
+
+/* Books grid - CSS Grid for responsive cards */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.book-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-initial {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+}
+
+.book-info {
+  padding: 1.5rem;
+}
+
+.book-title {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.book-author {
+  color: #667eea;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.book-genre,
+.book-year {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Book actions - flexbox */
+.book-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   PAGINATION - Flexbox Center Layout
+   ============================================ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.page-info {
+  font-weight: 600;
+  color: #667eea;
+}
+
+/* ============================================
+   DETAIL PAGE - Flexbox Layout
+   ============================================ */
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Detail container - flexbox horizontal layout */
+.detail-container {
+  display: flex;
+  gap: 3rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.detail-cover {
+  flex-shrink: 0;
+}
+
+.book-cover-large {
+  width: 250px;
+  height: 350px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-initial-large {
+  font-size: 6rem;
+  color: white;
+  font-weight: bold;
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.detail-title {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* Detail grid - CSS Grid for metadata */
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #667eea;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.detail-value {
+  color: #333;
+}
+
+.genre-description {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.genre-description h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+/* Detail actions - flexbox */
+.detail-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   FORMS - Form Styling
+   ============================================ */
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form-container h1 {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+}
+
+.book-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+/* Form actions - flexbox */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ============================================
+   LOGIN PAGE - Centered Flexbox
+   ============================================ */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+}
+
+.login-box {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h1 {
+  color: #667eea;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-info {
+  background: #fff3cd;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-info code {
+  background: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-footer a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Alert messages */
+.alert {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ============================================
+   CONTENT PAGES (About, Contact)
+   ============================================ */
+
+.content-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-page h1 {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+}
+
+.content-page h2 {
+  color: #667eea;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.about-section.highlight {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+.feature-list {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.feature-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.note {
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* Contact page - Grid layout */
+.contact-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #4a628a;
+}
+
+.contact-card h3 {
+  color: #4a628a;
+  margin-bottom: 0.5rem;
+}
+
+.contact-link {
+  color: #4a628a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-form-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.contact-form-section h2 {
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-note {
+  background: #d1ecf1;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid #0c5460;
+  color: #0c5460;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Media Queries
+   ============================================ */
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  /* Navigation adjustments */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+  }
+
+  .user-status {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Detail page - stack vertically */
+  .detail-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Hero text size */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Smaller book cover */
+  .book-cover-large {
+    width: 200px;
+    height: 280px;
+  }
+
+  .book-initial-large {
+    font-size: 4rem;
+  }
+
+  /* Form actions stack */
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

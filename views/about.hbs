@@ -1,0 +1,72 @@
+<!-- About page content -->
+<div class="content-page">
+  <h1>About Book Management System</h1>
+
+  <!-- Project description section -->
+  <div class="about-section">
+    <h2>Project Overview</h2>
+    <p>
+      This Book Management System is an academic project developed to
+      demonstrate proficiency in web development using Node.js, Express,
+      Handlebars templating, and SQLite3 database management.
+    </p>
+    <p>
+      The system allows users to browse a collection of books, view detailed
+      information about each book including author and genre details, and
+      perform CRUD operations (Create, Read, Update, Delete) on the book
+      database with proper authentication.
+    </p>
+  </div>
+
+  <!-- Technical features section -->
+  <div class="about-section">
+    <h2>Technical Features</h2>
+    <ul class="feature-list">
+      <li><strong>Backend:</strong> Node.js with Express framework</li>
+      <li><strong>Template Engine:</strong>
+        Handlebars (.hbs) for server-side rendering</li>
+      <li><strong>Database:</strong>
+        SQLite3 with relational tables (Books, Authors, Genres)</li>
+      <li><strong>Authentication:</strong>
+        Secure login system with bcrypt password hashing</li>
+      <li><strong>Security:</strong>
+        SQL injection prevention using parameterized queries</li>
+      <li><strong>Pagination:</strong>
+        Book list with 3 items per page navigation</li>
+      <li><strong>CRUD Operations:</strong>
+        Full create, read, update, and delete functionality</li>
+      <li><strong>Database Joins:</strong>
+        INNER JOIN queries combining multiple tables</li>
+      <li><strong>Responsive Design:</strong>
+        Clean UI using Flexbox and CSS Grid</li>
+    </ul>
+  </div>
+
+  <!-- Database structure section -->
+  <div class="about-section">
+    <h2>Database Structure</h2>
+    <p>The system uses three interconnected tables:</p>
+    <ul class="feature-list">
+      <li><strong>Authors:</strong>
+        Stores author information (name, birth year, country)</li>
+      <li><strong>Genres:</strong> Stores book genres and descriptions</li>
+      <li><strong>Books:</strong>
+        Stores book details with foreign keys to authors and genres</li>
+    </ul>
+    <p>
+      The database contains over 9 records distributed across these tables, with
+      proper relationships established through foreign key constraints.
+    </p>
+  </div>
+
+  <!-- Login information section -->
+  <div class="about-section highlight">
+    <h2>Login Credentials</h2>
+    <p><strong>Username:</strong> admin</p>
+    <p><strong>Password:</strong> wdf#2025</p>
+    <p class="note">
+      Only logged-in users can add, edit, or delete books. All passwords are
+      securely hashed using bcrypt encryption.
+    </p>
+  </div>
+</div>

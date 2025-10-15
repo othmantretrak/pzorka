@@ -1,0 +1,54 @@
+<!-- Page header with action button for logged-in users -->
+<div class="page-header">
+    <h1>Books Collection</h1>
+    {{#if isLoggedIn}}
+        <a href="/add" class="btn btn-primary"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add New Book</a>
+    {{/if}}
+</div>
+
+<!-- Books grid - displays 3 books per page -->
+<div class="books-grid">
+    {{#each books}}
+        <!-- Individual book card -->
+        <div class="book-card">
+            <!-- Book cover placeholder with first letter of title -->
+            <div class="book-cover">
+                <span class="book-initial">{{substring title 0 1}}</span>
+            </div>
+            
+            <!-- Book information -->
+            <div class="book-info">
+                <h3 class="book-title">{{title}}</h3>
+                <p class="book-author">by {{author_name}}</p>
+                <p class="book-genre">Genre: {{genre_name}}</p>
+                <p class="book-year">Published: {{publication_year}}</p>
+                
+                <!-- Action buttons -->
+                <div class="book-actions">
+                    <a href="/book/{{id}}" class="btn btn-small">View Details</a>
+                    {{#if ../isLoggedIn}}
+                        <a href="/book/{{id}}/edit" class="btn btn-small btn-secondary">Edit</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<!-- Pagination controls -->
+<div class="pagination">
+    {{#if hasPrev}}
+        <a href="/list?page={{subtract currentPage 1}}" class="btn btn-pagination"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Previous</a>
+    {{else}}
+        <span class="btn btn-pagination disabled"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Previous</span>
+    {{/if}}
+    
+    <!-- Page number display -->
+    <span class="page-info">Page {{currentPage}} of {{totalPages}}</span>
+    
+    {{#if hasNext}}
+        <a href="/list?page={{add currentPage 1}}" class="btn btn-pagination">Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    {{else}}
+        <span class="btn btn-pagination disabled">Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+    {{/if}}
+</div>

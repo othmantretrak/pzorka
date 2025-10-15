@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Main container using flexbox layout -->
+    <div class="container">
+        <!-- Navigation header -->
+        <header>
+            <nav class="navbar">
+                <!-- Site logo/title -->
+                <div class="logo">
+                    <h1><i class="fa-solid fa-book"></i> Book Management</h1>
+                </div>
+                
+                <!-- Navigation menu with 4 required pages -->
+                <ul class="nav-menu">
+                    <li><a href="/" class="{{#if (eq page 'home')}}active{{/if}}">Home</a></li>
+                    <li><a href="/list" class="{{#if (eq page 'list')}}active{{/if}}">Books List</a></li>
+                    <li><a href="/about" class="{{#if (eq page 'about')}}active{{/if}}">About</a></li>
+                    <li><a href="/contact" class="{{#if (eq page 'contact')}}active{{/if}}">Contact</a></li>
+                </ul>
+
+                <!-- User authentication status display -->
+                <div class="user-status">
+                    {{#if isLoggedIn}}
+                        <span class="logged-in">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <span class="sr-only">Logged in as</span>
+                            {{user.username}}
+                        </span>
+                        <a href="/logout" class="btn btn-small">Logout</a>
+                    {{else}}
+                        <a href="/login" class="btn btn-small btn-primary">Login</a>
+                    {{/if}}
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content area - filled by individual page templates -->
+        <main>
+            {{{body}}}
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Book Management System | Academic Project</p>
+        </footer>
+    </div>
+</body>
+</html>

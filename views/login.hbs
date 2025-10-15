@@ -1,0 +1,61 @@
+<!-- Login page container -->
+<div class="login-container">
+  <div class="login-box">
+    <!-- Login header -->
+    <h1>Login</h1>
+    <p class="login-subtitle">Sign in to manage books</p>
+
+    <!-- Display error message if login failed -->
+    {{#if error}}
+      <div class="alert alert-error">
+        {{error}}
+      </div>
+    {{/if}}
+
+    <!-- Login form -->
+    <form action="/login" method="POST" class="login-form">
+
+      <!-- Username input -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="Enter username"
+          autocomplete="username"
+        />
+      </div>
+
+      <!-- Password input -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Enter password"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+
+    <!-- Login credentials reminder -->
+    <div class="login-info">
+      <p><strong>Default Credentials:</strong></p>
+      <p>Username: <code>admin</code></p>
+      <p>Password: <code>wdf#2025</code></p>
+    </div>
+
+    <!-- Back to home link -->
+    <div class="login-footer">
+      <a href="/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Back to Home</a>
+    </div>
+  </div>
+</div>

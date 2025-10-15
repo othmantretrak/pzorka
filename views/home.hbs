@@ -1,0 +1,68 @@
+<!-- Home page hero section -->
+<div class="hero">
+  <h1>Welcome to Book Management System</h1>
+  <p class="hero-subtitle">Explore, manage, and organize your book collection</p>
+</div>
+
+<!-- Features grid using CSS Grid -->
+<div class="features-grid">
+  <!-- Feature card 1 -->
+  <div class="feature-card">
+    <div class="feature-icon"><i
+        class="fa-solid fa-book"
+        aria-hidden="true"
+      ></i><span class="sr-only">Browse Books</span></div>
+    <h3>Browse Books</h3>
+    <p>Explore our extensive collection of books from various authors and genres</p>
+    <a href="/list" class="btn">View Books</a>
+  </div>
+
+  <!-- Feature card 2 -->
+  <div class="feature-card">
+    <div class="feature-icon"><i
+        class="fa-solid fa-pen-to-square"
+        aria-hidden="true"
+      ></i><span class="sr-only">Manage Collection</span></div>
+    <h3>Manage Collection</h3>
+    <p>Add, edit, and organize books in your library (requires login)</p>
+    {{#if isLoggedIn}}
+      <a href="/add" class="btn btn-primary">Add New Book</a>
+    {{else}}
+      <a href="/login" class="btn">Login to Manage</a>
+    {{/if}}
+  </div>
+
+  <!-- Feature card 3 -->
+  <div class="feature-card">
+    <div class="feature-icon"><i
+        class="fa-solid fa-magnifying-glass"
+        aria-hidden="true"
+      ></i><span class="sr-only">Detailed Information</span></div>
+    <h3>Detailed Information</h3>
+    <p>View comprehensive details about each book, author, and genre</p>
+    <a href="/list" class="btn">Explore Details</a>
+  </div>
+</div>
+
+<!-- System information section -->
+<div class="info-section">
+  <h2>System Features</h2>
+  <div class="info-grid">
+    <div class="info-item">
+      <strong>Database:</strong>
+      SQLite3 with relational tables
+    </div>
+    <div class="info-item">
+      <strong>Security:</strong>
+      Encrypted passwords & SQL injection protection
+    </div>
+    <div class="info-item">
+      <strong>Operations:</strong>
+      Full CRUD (Create, Read, Update, Delete)
+    </div>
+    <div class="info-item">
+      <strong>Pagination:</strong>
+      Easy navigation through book collection
+    </div>
+  </div>
+</div>
