@@ -169,7 +169,7 @@ const hbs = exphbs.create({
 
 app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", "./views");
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
@@ -483,8 +483,7 @@ app.get("/logout", (req, res) => {
 // START SERVER
 // ============================================
 
-/* app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log("Login credentials: username: admin, password: wdf#2025");
-}); */
-module.exports = app;
+});
